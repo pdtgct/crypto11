@@ -1,6 +1,15 @@
 Crypto11
 ========
 
+Open Fork
+---------
+
+This Package is a fork of https://github.com/ThalesIgnite/crypto11. It appears that Thales is no longer maintaining
+the `crypto11` project so we are gradually migrating all the functionality and open Pull Requests here.
+
+Original Documentation
+======================
+
 [![GoDoc](https://godoc.org/github.com/ThalesIgnite/crypto11?status.svg)](https://godoc.org/github.com/ThalesIgnite/crypto11)
 [![Build Status](https://travis-ci.com/ThalesIgnite/crypto11.svg?branch=master)](https://travis-ci.com/ThalesIgnite/crypto11)
 
@@ -67,7 +76,7 @@ To disable specific tests, set the environment variable `CRYPTO11_SKIP=<flags>` 
 list of the following options:
 
 *  `CERTS` - disables certificate-related tests. Needed for AWS CloudHSM, which doesn't support certificates.
-*  `OAEP_LABEL` - disables RSA OAEP encryption tests that use source data encoding parameter (also known as a 'label' 
+*  `OAEP_LABEL` - disables RSA OAEP encryption tests that use source data encoding parameter (also known as a 'label'
 in some crypto libraries). Needed for AWS CloudHSM.
 *  `DSA` - disables DSA tests. Needed for AWS CloudHSM (and any other tokens not supporting DSA).
 
@@ -102,7 +111,7 @@ https://docs.aws.amazon.com/cloudhsm/latest/userguide/pkcs11-library.html. Here'
 noticed when testing with the  v2.0.4 PKCS#11 library:
 
 - 1024-bit RSA keys don't appear to be supported, despite what `C_GetMechanismInfo` tells you.
-- The `CKM_RSA_PKCS_OAEP` mechanism doesn't support source data. I.e. when constructing a `CK_RSA_PKCS_OAEP_PARAMS`, 
+- The `CKM_RSA_PKCS_OAEP` mechanism doesn't support source data. I.e. when constructing a `CK_RSA_PKCS_OAEP_PARAMS`,
 one must set `pSourceData` to `NULL` and `ulSourceDataLen` to zero.
 - CloudHSM will generate it's own IV for GCM mode. This is described in their documentation, see footnote 4 on
 https://docs.aws.amazon.com/cloudhsm/latest/userguide/pkcs11-mechanisms.html.
