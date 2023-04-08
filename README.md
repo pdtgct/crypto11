@@ -33,14 +33,14 @@ especially regarding symmetric crypto.
 Installation
 ============
 
-Since v1.0.0, crypto11 requires Go v1.11+. Install the library by running:
+Since v1.0.0, crypto11 requires Go v1.17+. Install the library by running:
 
 ```bash
-go get github.com/ThalesIgnite/crypto11
+go get github.com/pdtgct/crypto11
 ```
 
 The crypto11 library needs to be configured with information about your PKCS#11 installation. This is either done programmatically
-(see the `Config` struct in [the documentation](https://godoc.org/github.com/ThalesIgnite/crypto11)) or via a configuration
+(see the `Config` struct in [the documentation](https://godoc.org/github.com/pdtgct/crypto11)) or via a configuration
 file. The configuration file is a JSON representation of the `Config` struct.
 
 A minimal configuration file looks like this:
@@ -119,7 +119,7 @@ Testing with SoftHSM2
 To set up a slot:
 
     $ cat softhsm2.conf
-    directories.tokendir = /home/rjk/go/src/github.com/ThalesIgnite/crypto11/tokens
+    directories.tokendir = /home/rjk/go/src/github.com/pdtgct/crypto11/tokens
     objectstore.backend = file
     log.level = INFO
     $ mkdir tokens
